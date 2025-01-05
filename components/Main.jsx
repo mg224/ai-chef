@@ -1,12 +1,14 @@
 import React from "react"
-import IngredientsList from "./components/IngredientsList"
-import AIRecipe from "./components/AIRecipe"
-import { getRecipeFromMistral } from "./ai"
+import IngredientsList from "./IngredientsList"
+import AIRecipe from "./AIRecipe"
+import { getRecipeFromMistral } from "../ai"
 
 export default function Main() {
 
-    const [ingredients, setIngredients] = React.useState([])
+    const [ingredients, setIngredients] = React.useState(["chicken", "main spices", "corn", "heavy cream", "pasta"])
     const [recipe, setRecipe] = React.useState("")
+    const recipeSection = React.useRef(null)
+    console.log(recipeSection)
 
     function addIngredient(formData) {
         const newIngredient = formData.get("ingredient")
@@ -17,6 +19,12 @@ export default function Main() {
         const recipeMarkdown = await getRecipeFromMistral(ingredients)
         setRecipe(recipeMarkdown)
     }
+
+    React.useEffect(() => {
+        if (recipe !== "" && recipeSection.current !== null) {
+            recipeSection.current.scrollIntoView({behavior: "smooth"})
+        }
+    }, [recipe])
 
     return (
         <main>
@@ -30,7 +38,7 @@ export default function Main() {
                 <button>Add ingredient</button>
             </form>
 
-            {ingredients.length > 0 && <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />}
+            {ingredients.length > 0 && <IngredientsList ingredients={ingredients} getRecipe={getRecipe} ref={recipeSection} />}
             
             {recipe && <AIRecipe recipe={recipe} />}
         </main>
