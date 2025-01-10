@@ -1,3 +1,8 @@
+# AI Chef
+
+Project built with React.js, Vite, and the Hugging Face AI API. Just enter a few ingredients and get started with brainstorming recipe ideas!
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
