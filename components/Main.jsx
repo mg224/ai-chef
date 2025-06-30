@@ -5,7 +5,7 @@ import { getRecipeFromMistral } from "../ai"
 
 export default function Main() {
 
-    const [ingredients, setIngredients] = React.useState(["chicken", "main spices", "corn", "heavy cream", "pasta"])
+    const [ingredients, setIngredients] = React.useState([])
     const [recipe, setRecipe] = React.useState("")
     const recipeSection = React.useRef(null)
     console.log(recipeSection)
@@ -28,6 +28,9 @@ export default function Main() {
 
     return (
         <main>
+            <div className="home-instructions">
+                <h3>Welcome! Enter some ingredients to generate a recipe.</h3>
+            </div>
             <form action={addIngredient} className="add-ingredient-form">
                 <input
                     type="text"
@@ -38,7 +41,9 @@ export default function Main() {
                 <button>Add ingredient</button>
             </form>
 
-            {ingredients.length > 0 && <IngredientsList ingredients={ingredients} getRecipe={getRecipe} ref={recipeSection} />}
+            <div>
+                {ingredients.length > 0 && <IngredientsList ingredients={ingredients} getRecipe={getRecipe} ref={recipeSection} />}
+            </div>
             
             {recipe && <AIRecipe recipe={recipe} />}
         </main>
