@@ -23,16 +23,16 @@ yarn install
 
 #### 3. **Set Up Environment Variables**
 
-Create a `.env` file in the root directory and add your Hugging Face API key:
+Create a `.env` file in the root directory and add your Hugging Face API access token:
 
 ```env
-VITE_HF_API_KEY=your_huggingface_api_key_here
+VITE_HF_ACCESS_TOKEN=your_huggingface_api_access_token
 ```
 
 > If you're using Create React App (CRA), prefix the variable with `REACT_APP_` instead:
 >
 > ```env
-> REACT_APP_HF_API_KEY=your_huggingface_api_key_here
+> REACT_APP_HF_ACCESS_TOKEN=your_huggingface_api_access_token
 > ```
 
 > Never commit your `.env` file to version control!
