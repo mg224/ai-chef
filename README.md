@@ -45,7 +45,7 @@ npm run dev
 yarn dev
 ```
 
-The app will be available at [http://localhost:3000](http://localhost:3000) or [http://localhost:5173](http://localhost:5173)
+The app will be available at [http://localhost:5173](http://localhost:5173)
 
 #### 5. **Using the Hugging Face API**
 
