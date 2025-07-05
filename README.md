@@ -29,14 +29,6 @@ Create a `.env` file in the root directory and add your Hugging Face API access 
 VITE_HF_ACCESS_TOKEN=your_huggingface_api_access_token
 ```
 
-> If you're using Create React App (CRA), prefix the variable with `REACT_APP_` instead:
->
-> ```env
-> REACT_APP_HF_ACCESS_TOKEN=your_huggingface_api_access_token
-> ```
-
-> Never commit your `.env` file to version control!
-
 #### 4. **Run the Development Server**
 
 ```bash
